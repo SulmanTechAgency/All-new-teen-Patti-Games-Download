@@ -136,7 +136,7 @@ footer {
   </div>
 
   <div class="app-card">
-    <img src="images/1740416345.webp">
+    <img src="images/https://github.com/SulmanTechAgency/All-new-teen-Patti-Games-Download/blob/51aeeacb189819fd369808bee0cb5ff09f8c1dbc/1740416345.webp">
     <div class="app-content">
       <h2>3Patti Blue</h2>
       <p class="rating">⭐⭐⭐⭐⭐ 4.8</p>
