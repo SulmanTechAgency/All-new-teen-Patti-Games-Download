@@ -1,175 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  google-site-verification: googledb6139517451342c.html
+<head>google-site-verification: googledb6139517451342c.html
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>3 Patti Apps</title>
-googledb6139517451342c (1).html
+
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0f172a;
-  color: white;
-}
-google-site-verification: googledb6139517451342c.html
-/* HEADER */
-header {
-  text-align: center;
-  padding: 25px;
-  background: linear-gradient(90deg, #ffcc00, #ff6600);
+  font-family: Arial;
+  background: white;
   color: black;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 28px;
+/* HEADER */
+header {
+  text-align: center;
+  padding: 15px;
+  background: #f1f5f9;
+  font-weight: bold;
 }
 
 /* GRID */
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-/* CARD */
-.app-card {
-  background: #1e293b;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: 0.3s;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-
-.app-card:hover {
-  transform: translateY(-5px);
-}
-
-/* IMAGE */
-.app-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-/* CONTENT */
-.app-content {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
   padding: 15px;
 }
 
-.app-content h2 {
-  margin: 5px 0;
-  font-size: 20px;
+/* APP ICON */
+.app {
+  text-align: center;
+  cursor: pointer;
 }
 
-.rating {
-  color: gold;
-  font-size: 14px;
+.app img {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
 }
 
-.downloads {
-  color: #38bdf8;
-  font-size: 13px;
+.app p {
+  font-size: 12px;
+  margin-top: 5px;
 }
 
-/* BUTTON */
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.popup-content img {
+  width: 90px;
+  border-radius: 20px;
+}
+
 .btn {
   display: block;
   margin-top: 10px;
   padding: 10px;
-  text-align: center;
-  background: linear-gradient(90deg, #ff0000, #ff6600);
+  background: green;
   color: white;
-  border-radius: 10px;
   text-decoration: none;
-  font-weight: bold;
+  border-radius: 10px;
 }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #020617;
+.close {
+  margin-top: 10px;
+  color: red;
+  cursor: pointer;
 }
 </style>
 
 </head>
 <body>
-<header>
-  <h1>🔥 3 Patti Apps 🔥</h1>
-  <p>Best Teen Patti Games</p>
-</header>
+
+<header>📱 3 Patti Apps</header>
 
 <div class="container">
 
-  <!-- APP -->
-  <div class="app-card">
+  <!-- APP 1 -->
+  <div class="app" onclick="openApp('Pearl','images/pearl.png','4.8','150K','https://3pattipearl.com/?from_gameid=4457555&channelCode=4348309')">
     <img src="images/pearl.png">
-    <div class="app-content">
-      <h2>3Patti Pearl</h2>
-      <p class="rating">⭐⭐⭐⭐⭐ 4.8</p>
-      <p class="downloads">150K Downloads</p>
-      <a class="btn" href="https://3pattipearl.com/?from_gameid=4457555&channelCode=4348309">Download</a>
-    </div>
+    <p>Pearl</p>
   </div>
 
-  <div class="app-card">
+  <!-- APP 2 -->
+  <div class="app" onclick="openApp('World','images/world.png','4.7','120K','https://3pattiworldpkk.com?from_gameid=5825951&channelCode=100000')">
     <img src="images/world.png">
-    <div class="app-content">
-      <h2>3Patti World</h2>
-      <p class="rating">⭐⭐⭐⭐⭐ 4.7</p>
-      <p class="downloads">120K Downloads</p>
-      <a class="btn" href="https://3pattiworldpkk.com?from_gameid=5825951&channelCode=100000">Download</a>
-    </div>
+    <p>World</p>
   </div>
 
-  <div class="app-card">
+  <!-- APP 3 -->
+  <div class="app" onclick="openApp('Showy','images/showy.png','4.9','180K','https://teenpattishowy.com/?from_gameid=5545690&channelCode=100000')">
     <img src="images/showy.png">
-    <div class="app-content">
-      <h2>3Patti Showy</h2>
-      <p class="rating">⭐⭐⭐⭐⭐ 4.9</p>
-      <p class="downloads">180K Downloads</p>
-      <a class="btn" href="https://teenpattishowy.com/?from_gameid=5545690&channelCode=100000">Download</a>
-    </div>
+    <p>Showy</p>
   </div>
 
-  <div class="app-card">
-    <img src="images/https://github.com/SulmanTechAgency/All-new-teen-Patti-Games-Download/blob/51aeeacb189819fd369808bee0cb5ff09f8c1dbc/1740416345.webp">
-    <div class="app-content">
-      <h2>3Patti Blue</h2>
-      <p class="rating">⭐⭐⭐⭐⭐ 4.8</p>
-      <p class="downloads">140K Downloads</p>
-      <a class="btn" href="https://3pattibluevip.com?from_gameid=9191920&channelCode=9131811">Download</a>
-    </div>
+  <!-- APP 4 -->
+  <div class="app" onclick="openApp('Blue','images/blue.png','4.8','140K','https://3pattibluevip.com?from_gameid=9191920&channelCode=9131811')">
+    <img src="images/blue.png">
+    <p>Blue</p>
   </div>
 
-  <div class="app-card">
+  <!-- APP 5 -->
+  <div class="app" onclick="openApp('Vages','images/vages.png','4.6','110K','https://ludovegas.com/?from_gameid=5076422&channelCode=4913682')">
     <img src="images/vages.png">
-    <div class="app-content">
-      <h2>3Patti Vages</h2>
-      <p class="rating">⭐⭐⭐⭐⭐ 4.6</p>
-      <p class="downloads">110K Downloads</p>
-      <a class="btn" href="https://ludovegas.com/?from_gameid=5076422&channelCode=4913682">Download</a>
-    </div>
+    <p>Vages</p>
   </div>
 
-  <div class="app-card">
+  <!-- APP 6 -->
+  <div class="app" onclick="openApp('Boss','images/boss.png','4.7','130K','https://3pattiboss.club/?from_gameid=2969921&channelCode=2968974')">
     <img src="images/boss.png">
-    <div class="app-content">
-      <h2>3Patti Boss</h2>
-      <p class="rating">⭐⭐⭐⭐⭐ 4.7</p>
-      <p class="downloads">130K Downloads</p>
-      <a class="btn" href="https://3pattiboss.club/?from_gameid=2969921&channelCode=2968974">Download</a>
-    </div>
+    <p>Boss</p>
   </div>
 
 </div>
 
-<footer>
-  <p>© 2026 | 3 Patti Apps</p>
-</footer>
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <img id="appImg">
+    <h2 id="appName"></h2>
+    <p id="appRating"></p>
+    <p id="appDownloads"></p>
+    <a id="appLink" class="btn" target="_blank">Download</a>
+    <div class="close" onclick="closeApp()">Close</div>
+  </div>
+</div>
+
+<script>
+function openApp(name, img, rating, downloads, link) {
+  document.getElementById("popup").style.display = "flex";
+  document.getElementById("appName").innerText = name;
+  document.getElementById("appImg").src = img;
+  document.getElementById("appRating").innerText = "⭐ " + rating;
+  document.getElementById("appDownloads").innerText = "⬇️ " + downloads + " Downloads";
+  document.getElementById("appLink").href = link;
+}
+
+function closeApp() {
+  document.getElementById("popup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
