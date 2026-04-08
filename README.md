@@ -135,7 +135,7 @@ footer {
   </div>
 
   <div class="app-card">
-    <img src="images/blue.png">
+    <img src="images/1740416345.webp">
     <div class="app-content">
       <h2>3Patti Blue</h2>
       <p class="rating">⭐⭐⭐⭐⭐ 4.8</p>
