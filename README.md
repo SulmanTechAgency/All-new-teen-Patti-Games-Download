@@ -96,10 +96,9 @@ footer {
 
 </head>
 <body>
-google-site-verification: googledb6139517451342c.html
 <header>
   <h1>🔥 3 Patti Apps 🔥</h1>
-  <p>Best Teen Patti Games Collection</p>
+  <p>Best Teen Patti Games</p>
 </header>
 
 <div class="container">
