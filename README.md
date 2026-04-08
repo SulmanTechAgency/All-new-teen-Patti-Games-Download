@@ -9,41 +9,40 @@
 body {
   margin: 0;
   font-family: Arial;
-  background: white;
-  color: black;
+  background: #ffffff;
 }
 
 /* HEADER */
 header {
   text-align: center;
-  padding: 15px;
-  background: #f1f5f9;
+  padding: 10px;
   font-weight: bold;
+  font-size: 18px;
+  background: #f1f1f1;
 }
 
-/* GRID */
+/* GRID - PERFECT MOBILE */
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  padding: 15px;
+  gap: 10px;
+  padding: 10px;
 }
 
 /* APP ICON */
 .app {
   text-align: center;
-  cursor: pointer;
 }
 
 .app img {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
+  width: 65px;
+  height: 65px;
+  border-radius: 18px;
 }
 
 .app p {
-  font-size: 12px;
-  margin-top: 5px;
+  font-size: 11px;
+  margin: 5px 0;
 }
 
 /* POPUP */
@@ -59,17 +58,16 @@ header {
   align-items: center;
 }
 
-.popup-content {
+.popup-box {
   background: white;
   padding: 20px;
   border-radius: 15px;
   width: 90%;
-  max-width: 350px;
   text-align: center;
 }
 
-.popup-content img {
-  width: 90px;
+.popup-box img {
+  width: 80px;
   border-radius: 20px;
 }
 
@@ -86,7 +84,6 @@ header {
 .close {
   margin-top: 10px;
   color: red;
-  cursor: pointer;
 }
 </style>
 
@@ -97,68 +94,62 @@ header {
 
 <div class="container">
 
-  <!-- APP 1 -->
-  <div class="app" onclick="openApp('3Patti Pearl','images/pearl.png','4.8','150K','https://3pattipearl.com/?from_gameid=4457555&channelCode=4348309')">
-    <img src="images/pearl.png">
-    <p>Pearl</p>
-  </div>
+<div class="app" onclick="openApp('3Patti Pearl','images/pearl.png','4.8','150K','https://3pattipearl.com/?from_gameid=4457555&channelCode=4348309')">
+<img src="images/pearl.png">
+<p>3Patti Pearl</p>
+</div>
 
-  <!-- APP 2 -->
-  <div class="app" onclick="openApp('3pattiWorld','images/world.png','4.7','120K','https://3pattiworldpkk.com?from_gameid=5825951&channelCode=100000')">
-    <img src="images/world.png">
-    <p>World</p>
-  </div>
+<div class="app" onclick="openApp('3Patti World','images/world.png','4.7','120K','https://3pattiworldpkk.com?from_gameid=5825951&channelCode=100000')">
+<img src="images/world.png">
+<p>3Patti World</p>
+</div>
 
-  <!-- APP 3 -->
-  <div class="app" onclick="openApp('3pattiShowy','images/showy.png','4.9','180K','https://teenpattishowy.com/?from_gameid=5545690&channelCode=100000')">
-    <img src="images/showy.png">
-    <p>Showy</p>
-  </div>
+<div class="app" onclick="openApp('3Patti Showy','images/showy.png','4.9','180K','https://teenpattishowy.com/?from_gameid=5545690&channelCode=100000')">
+<img src="images/showy.png">
+<p>3Patti Showy</p>
+</div>
 
-  <!-- APP 4 -->
-  <div class="app" onclick="openApp('3pattiBlue','images/blue.png','4.8','140K','https://3pattibluevip.com?from_gameid=9191920&channelCode=9131811')">
-    <img src="images/blue.png">
-    <p>Blue</p>
-  </div>
+<div class="app" onclick="openApp('3Patti Blue','images/blue.png','4.8','140K','https://3pattibluevip.com?from_gameid=9191920&channelCode=9131811')">
+<img src="images/blue.png">
+<p>3Patti Blue</p>
+</div>
 
-  <!-- APP 5 -->
-  <div class="app" onclick="openApp('3pattiVages','images/vages.png','4.6','110K','https://ludovegas.com/?from_gameid=5076422&channelCode=4913682')">
-    <img src="images/vages.png">
-    <p>Vages</p>
-  </div>
+<div class="app" onclick="openApp('3Patti Vages','images/vages.png','4.6','110K','https://ludovegas.com/?from_gameid=5076422&channelCode=4913682')">
+<img src="images/vages.png">
+<p>3Patti Vages</p>
+</div>
 
-  <!-- APP 6 -->
-  <div class="app" onclick="openApp('3pattiBoss','images/boss.png','4.7','130K','https://3pattiboss.club/?from_gameid=2969921&channelCode=2968974')">
-    <img src="images/boss.png">
-    <p>Boss</p>
-  </div>
+<div class="app" onclick="openApp('3Patti Boss','images/boss.png','4.7','130K','https://3pattiboss.club/?from_gameid=2969921&channelCode=2968974')">
+<img src="images/boss.png">
+<p>3Patti Boss</p>
+</div>
 
 </div>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
-  <div class="popup-content">
-    <img id="appImg">
-    <h2 id="appName"></h2>
-    <p id="appRating"></p>
-    <p id="appDownloads"></p>
-    <a id="appLink" class="btn" target="_blank">Download</a>
-    <div class="close" onclick="closeApp()">Close</div>
+  <div class="popup-box">
+    <img id="img">
+    <h2 id="name"></h2>
+    <p id="rating"></p>
+    <p id="downloads"></p>
+    <a id="link" class="btn" target="_blank">Download</a>
+    <p class="close" onclick="closeApp()">Close</p>
   </div>
 </div>
 
 <script>
-function openApp(name, img, rating, downloads, link) {
-  document.getElementById("popup").style.display = "flex";
-  document.getElementById("appName").innerText = name;
-  document.getElementById("appImg").src = img;
-  document.getElementById("appRating").innerText = "⭐ " + rating;
-  document.getElementById("appDownloads").innerText = "⬇️ " + downloads + " Downloads";
-  document.getElementById("appLink").href = link;
+function openApp(name, img, rating, downloads, link){
+document.getElementById("popup").style.display="flex";
+document.getElementById("name").innerText=name;
+document.getElementById("img").src=img;
+document.getElementById("rating").innerText="⭐ "+rating;
+document.getElementById("downloads").innerText="⬇️ "+downloads+" Downloads";
+document.getElementById("link").href=link;
 }
 
-function closeApp() {
-  document.getElementById("popup").style.display = "none";
+function closeApp(){
+document.getElementById("popup").style.display="none";
 }
 </script>
 
