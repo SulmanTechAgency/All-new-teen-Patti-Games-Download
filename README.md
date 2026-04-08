@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> google-site-verification: googledb6139517451342c.html
+<head> 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
 <title>3 Patti Apps</title>
 
 <style>
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial;
-  background: #ffffff;
+  background: white;
+  height: 100vh;
+  overflow: hidden; /* no scroll */
 }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 18px;
-  background: #f1f1f1;
-}
-
-/* GRID - PERFECT MOBILE */
+/* GRID FULL SCREEN */
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 10px;
+  height: 100vh;
+  padding: 5px;
+  gap: 5px;
 }
 
 /* APP ICON */
 .app {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .app img {
-  width: 65px;
-  height: 65px;
-  border-radius: 18px;
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
 }
 
-.app p {
-  font-size: 11px;
-  margin: 5px 0;
+.app span {
+  font-size: 10px;
+  margin-top: 3px;
+  text-align: center;
 }
 
 /* POPUP */
@@ -52,94 +52,88 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
   display: none;
+  background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
 }
 
-.popup-box {
+.box {
   background: white;
-  padding: 20px;
-  border-radius: 15px;
-  width: 90%;
+  padding: 15px;
+  border-radius: 12px;
+  width: 85%;
   text-align: center;
 }
 
-.popup-box img {
-  width: 80px;
-  border-radius: 20px;
+.box img {
+  width: 70px;
+  border-radius: 15px;
 }
 
 .btn {
   display: block;
-  margin-top: 10px;
-  padding: 10px;
+  margin-top: 8px;
+  padding: 8px;
   background: green;
   color: white;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 8px;
+  font-size: 13px;
 }
 
 .close {
-  margin-top: 10px;
+  margin-top: 8px;
   color: red;
+  font-size: 12px;
 }
 </style>
 
 </head>
 <body>
 
-<header>📱 3 Patti Apps</header>
-
 <div class="container">
 
 <div class="app" onclick="openApp('3Patti Pearl','images/pearl.png','4.8','150K','https://3pattipearl.com/?from_gameid=4457555&channelCode=4348309')">
-<img src="images/pearl.png">
-<p>3Patti Pearl</p>
+<img src="images/pearl.png"><span>Pearl</span>
 </div>
 
 <div class="app" onclick="openApp('3Patti World','images/world.png','4.7','120K','https://3pattiworldpkk.com?from_gameid=5825951&channelCode=100000')">
-<img src="images/world.png">
-<p>3Patti World</p>
+<img src="images/world.png"><span>World</span>
 </div>
 
 <div class="app" onclick="openApp('3Patti Showy','images/showy.png','4.9','180K','https://teenpattishowy.com/?from_gameid=5545690&channelCode=100000')">
-<img src="images/showy.png">
-<p>3Patti Showy</p>
+<img src="images/showy.png"><span>Showy</span>
 </div>
 
 <div class="app" onclick="openApp('3Patti Blue','images/blue.png','4.8','140K','https://3pattibluevip.com?from_gameid=9191920&channelCode=9131811')">
-<img src="images/blue.png">
-<p>3Patti Blue</p>
+<img src="images/blue.png"><span>Blue</span>
 </div>
 
 <div class="app" onclick="openApp('3Patti Vages','images/vages.png','4.6','110K','https://ludovegas.com/?from_gameid=5076422&channelCode=4913682')">
-<img src="images/vages.png">
-<p>3Patti Vages</p>
+<img src="images/vages.png"><span>Vages</span>
 </div>
 
 <div class="app" onclick="openApp('3Patti Boss','images/boss.png','4.7','130K','https://3pattiboss.club/?from_gameid=2969921&channelCode=2968974')">
-<img src="images/boss.png">
-<p>3Patti Boss</p>
+<img src="images/boss.png"><span>Boss</span>
 </div>
 
 </div>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
-  <div class="popup-box">
+  <div class="box">
     <img id="img">
-    <h2 id="name"></h2>
+    <h3 id="name"></h3>
     <p id="rating"></p>
     <p id="downloads"></p>
     <a id="link" class="btn" target="_blank">Download</a>
-    <p class="close" onclick="closeApp()">Close</p>
+    <div class="close" onclick="closeApp()">Close</div>
   </div>
 </div>
 
 <script>
-function openApp(name, img, rating, downloads, link){
+function openApp(name,img,rating,downloads,link){
 document.getElementById("popup").style.display="flex";
 document.getElementById("name").innerText=name;
 document.getElementById("img").src=img;
@@ -147,7 +141,6 @@ document.getElementById("rating").innerText="⭐ "+rating;
 document.getElementById("downloads").innerText="⬇️ "+downloads+" Downloads";
 document.getElementById("link").href=link;
 }
-
 function closeApp(){
 document.getElementById("popup").style.display="none";
 }
